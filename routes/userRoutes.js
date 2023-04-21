@@ -61,7 +61,6 @@ router.post("/login", async (req, res) => {
       return res.status(404).json({ message: "User not registered" });
     }
     // If user already there then compare the pasword
-
     bcrypt.compare(password, user.password, (err, result) => {
       if (err) {
         return res.status(500).json({ message: err.message });
